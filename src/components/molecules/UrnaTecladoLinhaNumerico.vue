@@ -4,6 +4,7 @@
       v-for="(num, index) of numsTeclado"
       :num="num"
       :key="index"
+      @click="adicionarNumero(num)"
     />
   </div>
 </template>
@@ -18,6 +19,9 @@ export default defineComponent({
   props: {
     numsTeclado: {
       type: String,
+    },
+    adicionarNumero: {
+      type: Function,
     },
   },
 });

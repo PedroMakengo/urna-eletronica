@@ -1,10 +1,22 @@
 <template>
   <div class="urna-teclado">
     <div class="urna-teclado-numerico">
-      <UrnaTecladoLinhaNumerico :numsTeclado="[1, 2, 3]" />
-      <UrnaTecladoLinhaNumerico :numsTeclado="[4, 5, 6]" />
-      <UrnaTecladoLinhaNumerico :numsTeclado="[7, 8, 9]" />
-      <UrnaTecladoLinhaNumerico :numsTeclado="[0]" />
+      <UrnaTecladoLinhaNumerico
+        :numsTeclado="[1, 2, 3]"
+        :adicionarNumero="adicionarNumero"
+      />
+      <UrnaTecladoLinhaNumerico
+        :numsTeclado="[4, 5, 6]"
+        :adicionarNumero="adicionarNumero"
+      />
+      <UrnaTecladoLinhaNumerico
+        :numsTeclado="[7, 8, 9]"
+        :adicionarNumero="adicionarNumero"
+      />
+      <UrnaTecladoLinhaNumerico
+        :numsTeclado="[0]"
+        :adicionarNumero="adicionarNumero"
+      />
     </div>
     <div class="urna-teclado-acoes">
       <button class="btn-branco">BRANCO</button>
@@ -21,6 +33,9 @@ import UrnaTecladoLinhaNumerico from "@/components/molecules/UrnaTecladoLinhaNum
 export default defineComponent({
   name: "Teclado",
   components: { UrnaTecladoLinhaNumerico },
+  props: {
+    adicionarNumero: { type: Function },
+  },
 });
 </script>
 
