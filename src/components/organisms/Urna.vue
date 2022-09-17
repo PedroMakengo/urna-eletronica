@@ -18,17 +18,6 @@ export default defineComponent({
   name: "Urna",
   components: { Teclado, Tela },
 
-  methods: {
-    adicionarNumero(numero: any) {
-      // VERIFICA LIMITE DE NÚMEROS VOTADOS
-      if (this.numeroVoto.length == this.quantidadeNumeros) {
-        return false;
-      }
-      // ADICIONA O NÚMERO SELECIONADO
-      this.numeroVoto += "" + numero;
-    },
-  },
-
   data() {
     return {
       tela: "prefeito",
@@ -66,6 +55,28 @@ export default defineComponent({
         },
       },
     };
+  },
+  methods: {
+    adicionarNumero(numero: number) {
+      // VERIFICA LIMITE DE NÚMEROS VOTADOS
+      if (this.numeroVoto.length == this.quantidadeNumeros) {
+        return false;
+      }
+      // ADICIONA O NÚMERO SELECIONADO
+      this.numeroVoto += "" + numero;
+    },
+    verificarCandidato() {
+      if (this.numeroVoto.length < this.quantidadeNumeros) {
+        return false;
+      }
+
+      // VERIFICA CANDIDATO EXISTENTE
+      if (this.candidatos[this.tela][this.numeroVoto]) {
+        this.candidato = this.candidatos[this.tela][this.numeroVoto];
+
+        return true;
+      }
+    },
   },
 });
 </script>
