@@ -1,34 +1,26 @@
 <template>
   <div class="urna-teclado">
     <div class="urna-teclado-numerico">
-      <div class="urna-teclado-numerico-linha">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-      </div>
-      <div class="urna-teclado-numerico-linha">
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-      </div>
-      <div class="urna-teclado-numerico-linha">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-      </div>
-      <div class="urna-teclado-numerico-linha">
-        <button>0</button>
-      </div>
+      <UrnaTecladoLinhaNumerico :numsTeclado="[1, 2, 3]" />
+      <UrnaTecladoLinhaNumerico :numsTeclado="[4, 5, 6]" />
+      <UrnaTecladoLinhaNumerico :numsTeclado="[7, 8, 9]" />
+      <UrnaTecladoLinhaNumerico :numsTeclado="[0]" />
     </div>
-    <div class="urna-teclado-acoes"></div>
+    <div class="urna-teclado-acoes">
+      <button class="btn-branco">BRANCO</button>
+      <button class="btn-corrige">CORRIGE</button>
+      <button class="btn-confirma">CONFIRMA</button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import UrnaTecladoLinhaNumerico from "@/components/molecules/UrnaTecladoLinhaNumerico.vue";
 
 export default defineComponent({
   name: "Teclado",
+  components: { UrnaTecladoLinhaNumerico },
 });
 </script>
 
@@ -39,23 +31,36 @@ export default defineComponent({
   background-color: var(--ballot-box-keyboard-color);
   border-radius: 0.5rem;
   padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .urna-teclado-numerico {
   width: 100%;
 }
 
-.urna-teclado-numerico-linha {
+.urna-teclado-acoes {
+  width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.urna-teclado-numerico button {
-  background-color: var(--ballot-box-keyboard-button-color);
-  color: var(--light-text-color);
-  font-size: 30px;
-  border-radius: 0.5rem;
-  width: 80px;
+.urna-teclado-acoes button {
+  color: var(--dark-text-color);
+  font-size: 15px;
+  border-radius: 5px;
+  width: 30%;
   height: 50px;
+}
+.btn-branco {
+  background-color: var(--ballot-box-white-button-color);
+}
+.btn-corrige {
+  background-color: var(--ballot-box-correct-button-color);
+}
+.btn-confirma {
+  background-color: var(--ballot-box-confirm-button-color);
 }
 </style>
