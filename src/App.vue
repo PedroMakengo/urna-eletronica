@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Urna from "@/components/Urna.vue";
+import Urna from "@/components/organisms/Urna.vue";
 
 export default defineComponent({
   components: { Urna },

@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Teclado from "@/components/Teclado.vue";
+import Teclado from "@/components/molecules/Teclado.vue";
 
 export default defineComponent({
   name: "Urna",
