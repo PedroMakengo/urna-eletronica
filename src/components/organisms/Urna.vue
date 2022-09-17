@@ -1,6 +1,10 @@
 <template>
   <div class="urna">
-    <Tela :tela="tela" />
+    <Tela
+      :tela="tela"
+      :numeroVoto="numeroVoto"
+      :quantidadeNumeros="quantidadeNumeros"
+    />
     <Teclado />
   </div>
 </template>
@@ -17,6 +21,8 @@ export default defineComponent({
   data() {
     return {
       tela: "prefeito",
+      numeroVoto: "1",
+      quantidadeNumeros: 2,
     };
   },
 });
