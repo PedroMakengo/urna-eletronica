@@ -1,6 +1,6 @@
 <template>
   <div class="urna">
-    <Tela />
+    <Tela :tela="tela" />
     <Teclado />
   </div>
 </template>
@@ -13,6 +13,12 @@ import Tela from "@/components/molecules/Tela.vue";
 export default defineComponent({
   name: "Urna",
   components: { Teclado, Tela },
+
+  data() {
+    return {
+      tela: "prefeito",
+    };
+  },
 });
 </script>
 

@@ -1,5 +1,7 @@
 <template>
-  <div class="urna-tela"></div>
+  <div class="urna-tela">
+    {{ tela }}
+  </div>
 </template>
 
 <script lang="ts">
@@ -7,6 +9,9 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "Tela",
+  props: {
+    tela: { type: String },
+  },
 });
 </script>
 
