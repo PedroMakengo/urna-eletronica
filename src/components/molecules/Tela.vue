@@ -1,6 +1,7 @@
 <template>
   <div class="urna-tela">
-    {{ tela }}
+    <div v-if="tela != 'fim'" class="urna-tela-voto">votação</div>
+    <div v-if="tela == 'fim'" class="urna-tela-fim">finalização</div>
   </div>
 </template>
 

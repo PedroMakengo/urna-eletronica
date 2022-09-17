@@ -33,5 +33,6 @@ export default defineComponent({
   border-radius: 5px;
 
   display: flex;
+  justify-content: space-between;
 }
 </style>
