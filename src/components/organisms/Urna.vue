@@ -1,5 +1,6 @@
 <template>
   <div class="urna">
+    <Tela />
     <Teclado />
   </div>
 </template>
@@ -7,10 +8,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Teclado from "@/components/molecules/Teclado.vue";
+import Tela from "@/components/molecules/Tela.vue";
 
 export default defineComponent({
   name: "Urna",
-  components: { Teclado },
+  components: { Teclado, Tela },
 });
 </script>
 
