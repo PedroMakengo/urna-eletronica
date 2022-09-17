@@ -23,7 +23,9 @@
       <button type="button" @click="corrigir()" class="btn-corrige">
         CORRIGE
       </button>
-      <button class="btn-confirma">CONFIRMA</button>
+      <button type="button" @click="confirmar()" class="btn-confirma">
+        CONFIRMA
+      </button>
     </div>
   </div>
 </template>
@@ -38,6 +40,7 @@ export default defineComponent({
   props: {
     adicionarNumero: Function,
     corrigir: Function,
+    confirmar: Function,
   },
 });
 </script>

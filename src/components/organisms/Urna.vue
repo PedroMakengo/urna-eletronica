@@ -6,7 +6,11 @@
       :quantidadeNumeros="quantidadeNumeros"
       :candidato="candidato"
     />
-    <Teclado :adicionarNumero="adicionarNumero" :corrigir="corrigir" />
+    <Teclado
+      :adicionarNumero="adicionarNumero"
+      :corrigir="corrigir"
+      :confirmar="confirmar"
+    />
   </div>
 </template>
 
@@ -93,6 +97,19 @@ export default defineComponent({
     limpar() {
       this.candidato = {};
       this.numeroVoto = "";
+    },
+    confirmar() {
+      if (this.numeroVoto.length < this.quantidadeNumeros) {
+        return false;
+      }
+      return this.avancarTela();
+    },
+    avancarTela() {
+      if (this.tela == "prefeito") {
+        this.tela = "vereador";
+        this.quantidadeNumeros = 5;
+        return this.limpar();
+      }
     },
   },
 });
