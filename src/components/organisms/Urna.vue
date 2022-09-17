@@ -23,6 +23,7 @@ export default defineComponent({
       tela: "prefeito",
       numeroVoto: "17",
       quantidadeNumeros: 2,
+      candidatos: {},
     };
   },
 });
