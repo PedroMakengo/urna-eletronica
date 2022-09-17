@@ -56,4 +56,21 @@ export default defineComponent({
   margin: 20px 0;
   text-transform: uppercase;
 }
+
+.urna-tela-voto-numeros {
+  display: flex;
+  align-items: center;
+}
+.urna-tela-voto-numero {
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--dark-border-color);
+  margin-left: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+}
 </style>

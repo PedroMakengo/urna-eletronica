@@ -21,7 +21,7 @@ export default defineComponent({
   data() {
     return {
       tela: "prefeito",
-      numeroVoto: "1",
+      numeroVoto: "17",
       quantidadeNumeros: 2,
     };
   },
