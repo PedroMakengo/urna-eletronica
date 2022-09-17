@@ -4,8 +4,9 @@
       :tela="tela"
       :numeroVoto="numeroVoto"
       :quantidadeNumeros="quantidadeNumeros"
+      :candidato="candidato"
     />
-    <Teclado :adicionarNumero="adicionarNumero" />
+    <Teclado :adicionarNumero="adicionarNumero" :corrigir="corrigir" />
   </div>
 </template>
 
@@ -64,6 +65,9 @@ export default defineComponent({
       }
       // ADICIONA O NÚMERO SELECIONADO
       this.numeroVoto += "" + numero;
+
+      // VERIFICA CANDIDATO VOTADO
+      this.verificarCandidato();
     },
     verificarCandidato() {
       if (this.numeroVoto.length < this.quantidadeNumeros) {
@@ -73,9 +77,22 @@ export default defineComponent({
       // VERIFICA CANDIDATO EXISTENTE
       if (this.candidatos[this.tela][this.numeroVoto]) {
         this.candidato = this.candidatos[this.tela][this.numeroVoto];
-
         return true;
       }
+
+      // VOTO NULO
+      this.candidato = {
+        name: "Voto nulo",
+        partido: "Voto nulo",
+        imagem: "",
+      };
+    },
+    corrigir() {
+      this.limpar();
+    },
+    limpar() {
+      this.candidato = {};
+      this.numeroVoto = "";
     },
   },
 });

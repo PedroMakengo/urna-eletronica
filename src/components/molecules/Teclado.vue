@@ -20,7 +20,9 @@
     </div>
     <div class="urna-teclado-acoes">
       <button class="btn-branco">BRANCO</button>
-      <button class="btn-corrige">CORRIGE</button>
+      <button type="button" @click="corrigir()" class="btn-corrige">
+        CORRIGE
+      </button>
       <button class="btn-confirma">CONFIRMA</button>
     </div>
   </div>
@@ -34,7 +36,8 @@ export default defineComponent({
   name: "Teclado",
   components: { UrnaTecladoLinhaNumerico },
   props: {
-    adicionarNumero: { type: Function },
+    adicionarNumero: Function,
+    corrigir: Function,
   },
 });
 </script>
