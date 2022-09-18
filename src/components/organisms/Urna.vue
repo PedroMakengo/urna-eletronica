@@ -58,7 +58,7 @@ export default defineComponent({
               "https://raw.githubusercontent.com/william-costa/wdev-urna-eletronica-resources/master/images/goku.png",
           },
         },
-      },
+      } as any,
     };
   },
   methods: {
@@ -110,6 +110,7 @@ export default defineComponent({
         this.quantidadeNumeros = 5;
         return this.limpar();
       }
+      this.tela = "fim";
     },
   },
 });

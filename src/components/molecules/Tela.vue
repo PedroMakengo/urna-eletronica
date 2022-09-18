@@ -41,7 +41,7 @@
         <p>Verde para Confirmar</p>
       </div>
     </div>
-    <div v-if="tela == 'fim'" class="urna-tela-fim">finalização</div>
+    <div v-if="tela == 'fim'" class="urna-tela-fim">FIM</div>
   </div>
 </template>
 
@@ -53,7 +53,7 @@ export default defineComponent({
   props: {
     tela: String,
     numeroVoto: String,
-    quantidadeNumeros: String,
+    quantidadeNumeros: Number,
     candidato: Object,
   },
 });
@@ -126,5 +126,15 @@ export default defineComponent({
   font-size: 13px;
   margin-top: 20px;
   padding-top: 10px;
+}
+
+.urna-tela-fim {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 120px;
+  height: 100%;
+  height: 100%;
 }
 </style>

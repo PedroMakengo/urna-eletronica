@@ -17,12 +17,8 @@ export default defineComponent({
   name: "UrnaTecladoLinhaNumerico",
   components: { TeclaNumerico },
   props: {
-    numsTeclado: {
-      type: String,
-    },
-    adicionarNumero: {
-      type: Function,
-    },
+    numsTeclado: [Number],
+    adicionarNumero: Function,
   },
 });
 </script>

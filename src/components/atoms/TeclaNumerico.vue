@@ -7,7 +7,7 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "TeclaNumerico",
-  props: { num: { type: String } },
+  props: { num: { type: Number } },
 });
 </script>
 
