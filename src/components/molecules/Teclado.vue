@@ -19,7 +19,9 @@
       />
     </div>
     <div class="urna-teclado-acoes">
-      <button class="btn-branco">BRANCO</button>
+      <button type="button" @click="votarEmBranco()" class="btn-branco">
+        BRANCO
+      </button>
       <button type="button" @click="corrigir()" class="btn-corrige">
         CORRIGE
       </button>
@@ -41,6 +43,7 @@ export default defineComponent({
     adicionarNumero: Function,
     corrigir: Function,
     confirmar: Function,
+    votarEmBranco: Function,
   },
 });
 </script>
